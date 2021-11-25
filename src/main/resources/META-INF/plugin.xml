@@ -2,17 +2,11 @@
 <idea-plugin>
     <id>com.github.wbars.phpstormentrypointtest</id>
     <name>phpstorm-entry-point-test</name>
-    <vendor>wbars</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.wbars.phpstormentrypointtest.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.wbars.phpstormentrypointtest.services.MyProjectService"/>
+        <phpDeadCode implementation="com.github.wbars.phpstormentrypointtest.DoctrineEntryPoint" />
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.wbars.phpstormentrypointtest.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
